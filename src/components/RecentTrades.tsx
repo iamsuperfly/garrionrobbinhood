@@ -10,7 +10,7 @@ export function RecentTrades() {
   return (
     <section id="trades" className="section-pad">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <h2 className="font-display text-4xl">Recent trades</h2>
+        <h2 className="font-display text-3xl sm:text-4xl">Recent trades</h2>
         <p className="mt-2 text-sm text-charcoal/70">Last {trades.length || 12} prints from the official pool.</p>
         <div className="mt-6 overflow-hidden rounded-3xl border border-charcoal/10 bg-white">
           {trades.length === 0 ? (

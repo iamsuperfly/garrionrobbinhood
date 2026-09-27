@@ -22,9 +22,9 @@ export function OfficialDetails() {
   return (
     <section id="details" className="section-pad">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="mb-6 flex items-center gap-3">
-          <MeasureMark />
-          <h2 className="font-display text-4xl">Official details</h2>
+        <div className="mb-6 flex min-w-0 items-center gap-3">
+          <MeasureMark className="h-7 w-7 shrink-0" />
+          <h2 className="min-w-0 font-display text-3xl sm:text-4xl">Official details</h2>
         </div>
         <div className="overflow-hidden rounded-3xl border border-charcoal/10 bg-white">
           {rows.map((row) => (
