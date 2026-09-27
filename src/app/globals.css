@@ -18,7 +18,7 @@
 
 html {
   scroll-behavior: smooth;
-  overflow-x: clip;
+  overflow-x: hidden;
 }
 
 @media (min-width: 640px) {
@@ -29,7 +29,7 @@ html {
 }
 
 body {
-  overflow-x: clip;
+  overflow-x: hidden;
   background: var(--color-cream);
   color: var(--color-charcoal);
   font-family: var(--font-body), "Segoe UI", sans-serif;
