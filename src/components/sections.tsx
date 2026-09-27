@@ -1,0 +1,9 @@
+export { Hero } from "./Hero";
+export { LiveMarket } from "./LiveMarket";
+export { OfficialDetails } from "./OfficialDetails";
+export { HowItWorks } from "./HowItWorks";
+export { HowToBuy } from "./HowToBuy";
+export { Rewards } from "./Rewards";
+export { RecentTrades } from "./RecentTrades";
+export { Community } from "./Community";
+export { SiteFooter } from "./SiteFooter";
