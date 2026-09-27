@@ -30,10 +30,10 @@ export function OfficialDetails() {
           {rows.map((row) => (
             <div
               key={row.label}
-              className="grid gap-2 border-b border-charcoal/8 px-5 py-4 last:border-b-0 sm:grid-cols-[12rem_1fr_auto] sm:items-center"
+              className="grid min-w-0 gap-2 border-b border-charcoal/8 px-4 py-4 last:border-b-0 sm:grid-cols-[12rem_minmax(0,1fr)_auto] sm:items-center sm:px-5"
             >
               <p className="text-sm font-medium text-charcoal/60">{row.label}</p>
-              <p className="break-all font-mono text-sm text-charcoal">{row.value}</p>
+              <p className="min-w-0 break-all font-mono text-sm text-charcoal">{row.value}</p>
               <CopyButton value={row.value} label="Copy" compact className="justify-self-start sm:justify-self-end" />
             </div>
           ))}
