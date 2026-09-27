@@ -23,7 +23,7 @@ export function HowToBuy() {
               <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-cassava font-display text-lg">
                 {i + 1}
               </span>
-              <p className="pt-1.5 leading-7 text-charcoal/85">{step}</p>
+              <p className="min-w-0 flex-1 break-words pt-1.5 leading-7 text-charcoal/85">{step}</p>
             </li>
           ))}
         </ol>
