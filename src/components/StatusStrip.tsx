@@ -26,9 +26,12 @@ export function StatusStrip() {
 
   return (
     <div
-      className={`fixed inset-x-0 top-[var(--header-height)] z-30 border-b border-charcoal/10 bg-charcoal text-cream transition-transform duration-300 ${
-        visible ? "translate-y-0" : "-translate-y-[120%]"
+      className={`fixed inset-x-0 top-[var(--header-height)] z-30 border-b border-charcoal/10 bg-charcoal text-cream transition-[transform,opacity] duration-300 ${
+        visible
+          ? "translate-y-0 opacity-100"
+          : "pointer-events-none -translate-y-[calc(100%+var(--header-height))] opacity-0"
       }`}
+      aria-hidden={!visible}
     >
       <div className="mx-auto flex max-w-6xl items-center gap-4 overflow-x-auto px-4 py-2 text-xs sm:text-sm">
         <span className="inline-flex items-center gap-1.5 whitespace-nowrap">

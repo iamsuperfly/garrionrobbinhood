@@ -16,10 +16,10 @@ export function Hero() {
           <TokenImage src={summary.imageUrl} size={168} />
         </div>
         <div className="rise-in delay-1 text-center lg:text-left">
-          <p className="mb-2 text-sm font-semibold uppercase tracking-[0.22em] text-palm">
+          <p className="mb-2 text-xs font-semibold uppercase tracking-[0.14em] text-palm sm:text-sm sm:tracking-[0.22em]">
             {GARRI.ticker} · {GARRI.chain}
           </p>
-          <h1 className="font-display text-6xl leading-none text-charcoal sm:text-7xl">
+          <h1 className="font-display text-5xl leading-none text-charcoal sm:text-7xl">
             {GARRI.name}
           </h1>
           <p className="mx-auto mt-5 max-w-xl text-lg text-charcoal/80 lg:mx-0">
