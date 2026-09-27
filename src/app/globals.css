@@ -11,14 +11,28 @@
   --font-sans: var(--font-body);
 }
 
+:root {
+  --header-height: 4rem;
+  --status-height: 2rem;
+  --font-display: Georgia, "Times New Roman", serif;
+  --font-body: "Segoe UI", Arial, sans-serif;
+}
+
 html {
   scroll-behavior: smooth;
+}
+
+@media (min-width: 640px) {
+  :root {
+    --header-height: 4.25rem;
+    --status-height: 2.25rem;
+  }
 }
 
 body {
   background: var(--color-cream);
   color: var(--color-charcoal);
-  font-family: var(--font-body), "Segoe UI", sans-serif;
+  font-family: var(--font-body);
 }
 
 body::before {
@@ -32,14 +46,17 @@ body::before {
 }
 
 main,
-header,
 footer {
   position: relative;
   z-index: 1;
 }
 
+section[id]:not(#top) {
+  scroll-margin-top: calc(var(--header-height) + var(--status-height) + 1rem);
+}
+
 .font-display {
-  font-family: var(--font-display), Georgia, serif;
+  font-family: var(--font-display);
 }
 
 .section-pad {

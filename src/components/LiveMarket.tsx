@@ -15,7 +15,7 @@ export function LiveMarket() {
   return (
     <section id="live" className="section-pad pt-4">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="mb-6 flex items-end justify-between gap-4">
+        <div className="mb-6 flex flex-col items-start gap-3 sm:flex-row sm:items-end sm:justify-between sm:gap-4">
           <div>
             <h2 className="font-display text-4xl">Live market</h2>
             <p className="mt-2 text-sm text-charcoal/70">
@@ -23,7 +23,7 @@ export function LiveMarket() {
               {loading ? " · loading" : ""}
             </p>
           </div>
-          <span className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-1 text-xs font-medium">
+          <span className="inline-flex max-w-full items-center gap-2 rounded-full bg-white px-3 py-1 text-xs font-medium">
             <span className="live-dot" />
             Refreshing every 20s
           </span>
@@ -82,9 +82,9 @@ export function LiveMarket() {
 
 function Stat({ label, value }: { label: string; value: React.ReactNode }) {
   return (
-    <div className="rounded-3xl border border-charcoal/10 bg-white p-5">
+    <div className="min-w-0 rounded-3xl border border-charcoal/10 bg-white p-5">
       <p className="text-sm text-charcoal/65">{label}</p>
-      <p className="mt-2 font-display text-3xl tracking-tight">{value}</p>
+      <p className="mt-2 break-words font-display text-2xl tracking-tight sm:text-3xl">{value}</p>
     </div>
   );
 }

@@ -26,7 +26,7 @@ export function StatusStrip() {
 
   return (
     <div
-      className={`sticky top-16 z-30 border-b border-charcoal/10 bg-charcoal text-cream transition-transform duration-300 sm:top-[4.25rem] ${
+      className={`fixed inset-x-0 top-[var(--header-height)] z-30 border-b border-charcoal/10 bg-charcoal text-cream transition-transform duration-300 ${
         visible ? "translate-y-0" : "-translate-y-[120%]"
       }`}
     >
