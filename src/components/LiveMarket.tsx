@@ -17,7 +17,7 @@ export function LiveMarket() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="mb-6 flex flex-col items-start gap-3 sm:flex-row sm:items-end sm:justify-between sm:gap-4">
           <div>
-            <h2 className="font-display text-4xl">Live market</h2>
+            <h2 className="font-display text-3xl sm:text-4xl">Live market</h2>
             <p className="mt-2 text-sm text-charcoal/70">
               Last updated {formatTime(summary.updatedAt)}
               {loading ? " · loading" : ""}
