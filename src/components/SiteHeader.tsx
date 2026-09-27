@@ -40,65 +40,73 @@ export function SiteHeader() {
   }, []);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-charcoal/10 bg-cream/90 backdrop-blur-md">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:h-[4.25rem] sm:px-6">
-        <a href="#top" className="flex items-center gap-2.5 text-charcoal">
-          <BowlMark className="h-9 w-9" />
-          <span className="font-display text-2xl tracking-tight">GARRI</span>
-        </a>
-
-        <nav className="hidden items-center gap-7 lg:flex" aria-label="Primary">
-          {DESKTOP_LINKS.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="text-sm font-medium text-charcoal/80 transition hover:text-palm"
-            >
-              {link.label}
+    <>
+      <header className="sticky top-0 z-40 overflow-x-hidden border-b border-charcoal/10">
+        <div className="bg-cream/90 backdrop-blur-md">
+          <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-2 px-3 sm:h-[4.25rem] sm:gap-4 sm:px-6">
+            <a href="#top" className="flex min-w-0 items-center gap-2 text-charcoal sm:gap-2.5">
+              <BowlMark className="h-8 w-8 shrink-0 sm:h-9 sm:w-9" />
+              <span className="truncate font-display text-xl tracking-tight sm:text-2xl">GARRI</span>
             </a>
-          ))}
-        </nav>
 
-        <div className="hidden items-center gap-2 lg:flex">
-          <CopyButton value={GARRI.contract} label="Copy contract" compact />
-          <a
-            href={GARRI.buyUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="btn-primary h-10 px-5 text-sm"
-          >
-            Buy on Pons
-          </a>
+            <nav className="hidden items-center gap-7 lg:flex" aria-label="Primary">
+              {DESKTOP_LINKS.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="text-sm font-medium text-charcoal/80 transition hover:text-palm"
+                >
+                  {link.label}
+                </a>
+              ))}
+            </nav>
+
+            <div className="hidden items-center gap-2 lg:flex">
+              <CopyButton value={GARRI.contract} label="Copy contract" compact />
+              <a
+                href={GARRI.buyUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="btn-primary h-10 px-5 text-sm"
+              >
+                Buy on Pons
+              </a>
+            </div>
+
+            <div className="flex shrink-0 items-center gap-2 lg:hidden">
+              <a
+                href={GARRI.buyUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="btn-primary h-11 min-w-[3.25rem] px-3 text-sm sm:px-4"
+              >
+                Buy
+              </a>
+              <button
+                type="button"
+                className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-charcoal/15 bg-white"
+                aria-expanded={open}
+                aria-controls="mobile-menu"
+                aria-label={open ? "Close menu" : "Open menu"}
+                onClick={() => setOpen((v) => !v)}
+              >
+                <span className="sr-only">Menu</span>
+                <span className="relative block h-3.5 w-5">
+                  <span className={`absolute left-0 h-0.5 w-5 bg-charcoal transition ${open ? "top-1.5 rotate-45" : "top-0"}`} />
+                  <span className={`absolute left-0 top-1.5 h-0.5 w-5 bg-charcoal transition ${open ? "opacity-0" : "opacity-100"}`} />
+                  <span className={`absolute left-0 h-0.5 w-5 bg-charcoal transition ${open ? "top-1.5 -rotate-45" : "top-3"}`} />
+                </span>
+              </button>
+            </div>
+          </div>
         </div>
+      </header>
 
-        <div className="flex items-center gap-2 lg:hidden">
-          <a
-            href={GARRI.buyUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="btn-primary h-11 px-4 text-sm"
-          >
-            Buy
-          </a>
-          <button
-            type="button"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-charcoal/15 bg-white"
-            aria-expanded={open}
-            aria-controls="mobile-menu"
-            aria-label={open ? "Close menu" : "Open menu"}
-            onClick={() => setOpen((v) => !v)}
-          >
-            <span className="sr-only">Menu</span>
-            <span className="relative block h-3.5 w-5">
-              <span className={`absolute left-0 h-0.5 w-5 bg-charcoal transition ${open ? "top-1.5 rotate-45" : "top-0"}`} />
-              <span className={`absolute left-0 top-1.5 h-0.5 w-5 bg-charcoal transition ${open ? "opacity-0" : "opacity-100"}`} />
-              <span className={`absolute left-0 h-0.5 w-5 bg-charcoal transition ${open ? "top-1.5 -rotate-45" : "top-3"}`} />
-            </span>
-          </button>
-        </div>
-      </div>
-
-      <div className={`fixed inset-0 z-50 lg:hidden ${open ? "pointer-events-auto" : "pointer-events-none"}`}>
+      <div
+        className={`fixed inset-0 z-[80] overflow-hidden lg:hidden ${
+          open ? "pointer-events-auto" : "pointer-events-none invisible"
+        }`}
+      >
         <button
           type="button"
           className={`absolute inset-0 bg-charcoal/40 transition-opacity ${open ? "opacity-100" : "opacity-0"}`}
@@ -144,6 +152,6 @@ export function SiteHeader() {
           </div>
         </div>
       </div>
-    </header>
+    </>
   );
 }
