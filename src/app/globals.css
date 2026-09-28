@@ -11,30 +11,19 @@
   --font-sans: var(--font-body);
 }
 
-:root {
-  --header-height: 4rem;
-  --status-height: 2rem;
-}
-
 html {
   scroll-behavior: smooth;
-  overflow-x: hidden;
-}
-
-@media (min-width: 640px) {
-  :root {
-    --header-height: 4.25rem;
-    --status-height: 2.25rem;
-  }
+  scroll-padding-top: 6.5rem;
 }
 
 body {
-  overflow-x: hidden;
   background: var(--color-cream);
   color: var(--color-charcoal);
   font-family: var(--font-body), "Segoe UI", sans-serif;
-  padding-left: env(safe-area-inset-left);
-  padding-right: env(safe-area-inset-right);
+}
+
+section[id] {
+  scroll-margin-top: 6.5rem;
 }
 
 body::before {
@@ -53,28 +42,17 @@ footer {
   z-index: 1;
 }
 
-section[id]:not(#top) {
-  scroll-margin-top: calc(var(--header-height) + var(--status-height) + 1rem);
-}
-
 .font-display {
   font-family: var(--font-display), Georgia, serif;
 }
 
-h2.font-display {
-  overflow-wrap: anywhere;
-}
-
 .section-pad {
-  padding-top: 3.25rem;
-  padding-bottom: 3.25rem;
+  padding-block: clamp(3.75rem, 6vw, 5rem);
 }
 
-@media (min-width: 640px) {
-  .section-pad {
-    padding-top: 4.5rem;
-    padding-bottom: 4.5rem;
-  }
+.break-anywhere {
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .btn-primary {
@@ -119,6 +97,30 @@ h2.font-display {
 
 .btn-ghost:active {
   transform: scale(0.98);
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid rgba(194, 59, 34, 0.5);
+  outline-offset: 3px;
+}
+
+.status-strip {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.status-strip-scroll {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.status-strip-scroll::-webkit-scrollbar {
+  display: none;
 }
 
 .live-dot {
@@ -188,5 +190,23 @@ h2.font-display {
   .btn-primary,
   .btn-ghost {
     transition: none;
+  }
+
+  .status-strip {
+    transition: none;
+  }
+}
+
+@media (max-width: 639px) {
+  html {
+    scroll-padding-top: 6.25rem;
+  }
+
+  section[id] {
+    scroll-margin-top: 6.25rem;
+  }
+
+  .section-pad {
+    padding-block: clamp(3.5rem, 10vw, 4.25rem);
   }
 }

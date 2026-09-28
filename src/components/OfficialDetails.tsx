@@ -22,18 +22,18 @@ export function OfficialDetails() {
   return (
     <section id="details" className="section-pad">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="mb-6 flex min-w-0 items-center gap-3">
-          <MeasureMark className="h-7 w-7 shrink-0" />
-          <h2 className="min-w-0 font-display text-3xl sm:text-4xl">Official details</h2>
+        <div className="mb-6 flex items-center gap-3">
+          <MeasureMark />
+          <h2 className="font-display text-4xl">Official details</h2>
         </div>
         <div className="overflow-hidden rounded-3xl border border-charcoal/10 bg-white">
           {rows.map((row) => (
             <div
               key={row.label}
-              className="grid min-w-0 gap-2 border-b border-charcoal/8 px-4 py-4 last:border-b-0 sm:grid-cols-[12rem_minmax(0,1fr)_auto] sm:items-center sm:px-5"
+              className="grid min-w-0 gap-2 border-b border-charcoal/8 px-5 py-4 last:border-b-0 sm:grid-cols-[12rem_minmax(0,1fr)_auto] sm:items-center"
             >
               <p className="text-sm font-medium text-charcoal/60">{row.label}</p>
-              <p className="min-w-0 break-all font-mono text-sm text-charcoal">{row.value}</p>
+              <p className="break-anywhere min-w-0 font-mono text-sm text-charcoal">{row.value}</p>
               <CopyButton value={row.value} label="Copy" compact className="justify-self-start sm:justify-self-end" />
             </div>
           ))}

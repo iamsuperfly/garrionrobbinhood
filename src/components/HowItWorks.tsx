@@ -4,7 +4,7 @@ export function HowItWorks() {
   return (
     <section id="how" className="section-pad">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <h2 className="font-display text-3xl sm:text-4xl">How it works</h2>
+        <h2 className="font-display text-4xl">How it works</h2>
         <div className="mt-6 grid gap-4 md:grid-cols-2">
           {[
             {
@@ -24,9 +24,9 @@ export function HowItWorks() {
               body: "Once graduated, trading continues in the locked Uniswap v4 pool on Robinhood Chain. The official Pons listing remains the reference buy link.",
             },
           ].map((card) => (
-            <article key={card.title} className="rounded-3xl border border-charcoal/10 bg-white p-6">
+            <article key={card.title} className="min-w-0 rounded-3xl border border-charcoal/10 bg-white p-6">
               <h3 className="font-display text-2xl">{card.title}</h3>
-              <p className="mt-3 wrap-anywhere leading-7 text-charcoal/80">{card.body}</p>
+              <p className="break-anywhere mt-3 leading-7 text-charcoal/80">{card.body}</p>
             </article>
           ))}
         </div>

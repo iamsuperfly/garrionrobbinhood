@@ -32,7 +32,7 @@ export function CopyButton({
       type="button"
       onClick={onCopy}
       className={`inline-flex items-center justify-center gap-2 rounded-full border border-charcoal/15 bg-cream font-medium text-charcoal transition hover:border-palm/40 hover:bg-white active:scale-[0.98] ${
-        compact ? "h-10 px-3 text-sm" : "h-12 min-h-12 px-4 text-sm"
+        compact ? "h-11 min-h-11 px-3 text-sm" : "h-12 min-h-12 px-4 text-sm"
       } ${className}`}
       aria-label={`${label} ${value}`}
     >

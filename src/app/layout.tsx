@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Fraunces, Source_Sans_3 } from "next/font/google";
 import { GARRI } from "@/lib/constants";
 import "./globals.css";
@@ -26,13 +26,19 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="overflow-x-hidden">
+    <html lang="en">
       <body className={`${display.variable} ${body.variable} antialiased`}>
         {children}
       </body>

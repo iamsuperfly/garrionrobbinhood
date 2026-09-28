@@ -11,7 +11,7 @@ export function SiteFooter() {
           <p className="mt-2 text-sm text-cream/70">
             {GARRI.chain} · Chain ID {GARRI.chainId}
           </p>
-          <p className="mt-3 break-all font-mono text-xs text-cream/80">
+          <p className="break-anywhere mt-3 font-mono text-xs text-cream/80">
             Official contract only: {GARRI.contract}
           </p>
         </div>

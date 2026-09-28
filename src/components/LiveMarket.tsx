@@ -13,17 +13,17 @@ export function LiveMarket() {
   const graduated = summary.launchpad.completed === true;
 
   return (
-    <section id="live" className="section-pad pt-4">
+    <section id="live" className="section-pad">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="mb-6 flex flex-col items-start gap-3 sm:flex-row sm:items-end sm:justify-between sm:gap-4">
+        <div className="mb-6 flex flex-col items-start gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <h2 className="font-display text-3xl sm:text-4xl">Live market</h2>
+            <h2 className="font-display text-[clamp(2.25rem,7vw,2.5rem)]">Live market</h2>
             <p className="mt-2 text-sm text-charcoal/70">
               Last updated {formatTime(summary.updatedAt)}
               {loading ? " · loading" : ""}
             </p>
           </div>
-          <span className="inline-flex max-w-full items-center gap-2 rounded-full bg-white px-3 py-1 text-xs font-medium">
+          <span className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-1 text-xs font-medium">
             <span className="live-dot" />
             Refreshing every 20s
           </span>
@@ -82,9 +82,9 @@ export function LiveMarket() {
 
 function Stat({ label, value }: { label: string; value: React.ReactNode }) {
   return (
-    <div className="min-w-0 rounded-3xl border border-charcoal/10 bg-white p-5">
+    <div className="rounded-3xl border border-charcoal/10 bg-white p-5">
       <p className="text-sm text-charcoal/65">{label}</p>
-      <p className="mt-2 break-words font-display text-2xl tracking-tight sm:text-3xl">{value}</p>
+      <p className="mt-2 min-w-0 break-words font-display text-[clamp(1.6rem,7vw,1.875rem)] tracking-tight">{value}</p>
     </div>
   );
 }

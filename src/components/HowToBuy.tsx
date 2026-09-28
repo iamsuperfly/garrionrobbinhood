@@ -16,14 +16,14 @@ export function HowToBuy() {
   return (
     <section id="buy" className="section-pad">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <h2 className="font-display text-3xl sm:text-4xl">How to buy</h2>
+        <h2 className="font-display text-4xl">How to buy</h2>
         <ol className="mt-6 space-y-3">
           {steps.map((step, i) => (
-            <li key={step} className="flex gap-4 rounded-3xl border border-charcoal/10 bg-white p-5">
+            <li key={step} className="flex min-w-0 gap-4 rounded-3xl border border-charcoal/10 bg-white p-5">
               <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-cassava font-display text-lg">
                 {i + 1}
               </span>
-              <p className="min-w-0 flex-1 break-words wrap-anywhere pt-1.5 leading-7 text-charcoal/85">{step}</p>
+              <p className="break-anywhere min-w-0 pt-1.5 leading-7 text-charcoal/85">{step}</p>
             </li>
           ))}
         </ol>

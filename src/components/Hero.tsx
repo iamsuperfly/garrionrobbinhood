@@ -11,15 +11,15 @@ export function Hero() {
   const { summary } = useLiveData();
   return (
     <section id="top" className="section-pad">
-      <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-[auto_1fr]">
+      <div className="mx-auto grid max-w-6xl items-center gap-8 px-4 sm:gap-10 sm:px-6 lg:grid-cols-[auto_minmax(0,1fr)]">
         <div className="rise-in flex justify-center lg:justify-start">
           <TokenImage src={summary.imageUrl} size={168} />
         </div>
         <div className="rise-in delay-1 text-center lg:text-left">
-          <p className="mb-2 text-xs font-semibold uppercase tracking-[0.14em] text-palm sm:text-sm sm:tracking-[0.22em]">
+          <p className="mb-2 text-sm font-semibold uppercase tracking-[0.22em] text-palm">
             {GARRI.ticker} · {GARRI.chain}
           </p>
-          <h1 className="font-display text-5xl leading-none text-charcoal sm:text-7xl">
+          <h1 className="font-display text-[clamp(3.75rem,15vw,4.5rem)] leading-none text-charcoal sm:text-7xl">
             {GARRI.name}
           </h1>
           <p className="mx-auto mt-5 max-w-xl text-lg text-charcoal/80 lg:mx-0">
@@ -40,7 +40,7 @@ export function Hero() {
               Open Telegram
             </a>
           </div>
-          <p className="mt-6 break-all font-mono text-xs text-charcoal/70 sm:text-sm">{GARRI.contract}</p>
+          <p className="break-anywhere mt-6 font-mono text-xs text-charcoal/70 sm:text-sm">{GARRI.contract}</p>
         </div>
       </div>
     </section>
